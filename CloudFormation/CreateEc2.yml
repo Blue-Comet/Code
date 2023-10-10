@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: A sample template
+Resources:
+  EC2: #An inline comment
+    Type: "AWS::EC2::Instance"
+    Properties: 
+      ImageId: AMIID
+      InstanceType: t2.medium
+      KeyName: KEYNAME
+      SubnetId: SUBNET-ID
+      BlockDeviceMappings:
+        - DeviceName: /dev/sdc
+          Ebs:
+            VolumeSize: '8'
+            VolumeType: gp2
+            DeleteOnTermination: 'True'
+      SecurityGroupIds: 
+        - SG-ID
